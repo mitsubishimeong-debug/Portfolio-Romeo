@@ -163,7 +163,7 @@
           <p class="work-solution"><span class="mono">SYSTEM I BUILT</span> A centralized dashboard that consolidates campaign, spend, and performance data from 2023 to present — shortening the path from raw campaign data to the analysis and strategy work that depends on it.</p>
           <p class="work-tools mono">n8n · Meta Ads Manager · Google Sheets · HTML/JavaScript</p>
           <div class="work-actions">
-            <button class="btn btn-ghost btn-sm" data-toggle-details="details-meta-dashboard">View Case Study</button>
+            <button class="btn btn-ghost btn-sm" data-case-study="meta-dashboard">View Case Study</button>
             <a href="https://mitsubishimeong-debug.github.io/mitsubishi-meta-ads-dashboard/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Live Demo →</a>
           </div>
           <div class="work-details" id="details-meta-dashboard" hidden>
@@ -187,7 +187,7 @@
           <p class="work-solution"><span class="mono">SYSTEM I BUILT</span> An automation that receives inquiries, retrieves the information needed to respond, and uses AI to handle what it reasonably can — escalating to me through Telegram when a conversation needs human judgment.</p>
           <p class="work-tools mono">n8n · Facebook Messenger · Telegram · AI API</p>
           <div class="work-actions">
-            <button class="btn btn-ghost btn-sm" data-toggle-details="details-messenger">View Case Study</button>
+            <button class="btn btn-ghost btn-sm" data-case-study="messenger">View Case Study</button>
             <a href="#automation" class="btn btn-primary btn-sm">See Full Workflow ↓</a>
           </div>
           <div class="work-details" id="details-messenger" hidden>
@@ -210,7 +210,7 @@
           <p class="work-solution"><span class="mono">SYSTEM I BUILT</span> A CRM covering the full sales workflow: customer inquiry, follow-up, pipeline stage, application, quotation, vehicle details and bulletins, and monitoring — connected to a live data source.</p>
           <p class="work-tools mono">HTML · JavaScript · Google Sheets · Google Apps Script · GitHub</p>
           <div class="work-actions">
-            <button class="btn btn-ghost btn-sm" data-toggle-details="details-crm">View Case Study</button>
+            <button class="btn btn-ghost btn-sm" data-case-study="crm">View Case Study</button>
             <a href="https://mitsubishimeong-debug.github.io/CT-Citimotors-Dashboard/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Live Demo →</a>
           </div>
           <div class="work-details" id="details-crm" hidden>
@@ -233,7 +233,7 @@
           <p class="work-solution"><span class="mono">SYSTEM I BUILT</span> An automation that analyzes available Meta advertising data, surfaces patterns and performance issues, and generates decision-support ideas for what might be worth doing next.</p>
           <p class="work-tools mono">n8n · Google Gemini · Meta Ads data · Google Sheets</p>
           <div class="work-actions">
-            <button class="btn btn-ghost btn-sm" data-toggle-details="details-analyst">View Case Study</button>
+            <button class="btn btn-ghost btn-sm" data-case-study="meta-analyst">View Case Study</button>
           </div>
           <div class="work-details" id="details-analyst" hidden>
             <p><span class="mono detail-label">WHY IT MATTERED</span> Reviewing campaign performance manually each time meant analysis only happened when I had time to sit down and dig through the dashboard myself.</p>
@@ -271,7 +271,7 @@
           <p class="work-solution"><span class="mono">SYSTEM I BUILT</span> A recurring content workflow: it posts prepared content when available, and falls back to alternate content logic when it isn't — removing the need to manually run the posting process every day.</p>
           <p class="work-tools mono">n8n · Facebook · Telegram · Google Sheets · Gemini AI</p>
           <div class="work-actions">
-            <button class="btn btn-ghost btn-sm" data-toggle-details="details-social">View Case Study</button>
+            <button class="btn btn-ghost btn-sm" data-case-study="facebook-automation">View Case Study</button>
           </div>
           <div class="work-details" id="details-social" hidden>
             <p><span class="mono detail-label">WHY IT MATTERED</span> Missing even one day's post breaks posting consistency, and manually preparing and posting content daily is a recurring task easy to forget or delay.</p>
@@ -715,6 +715,15 @@
     <img id="lightboxImg" src="" alt="">
     <figcaption id="lightboxCaption" class="mono"></figcaption>
   </figure>
+</div>
+
+<!-- CASE STUDY MODAL -->
+<div class="case-modal" id="caseModal" hidden>
+  <div class="case-modal-backdrop" data-case-modal-close tabindex="-1"></div>
+  <div class="case-modal-panel" role="dialog" aria-modal="true" aria-labelledby="caseModalTitle">
+    <button class="case-modal-close" id="caseModalClose" aria-label="Close case study">✕</button>
+    <div class="case-modal-body" id="caseModalBody"></div>
+  </div>
 </div>
 
 <script src="script.js"></script>
