@@ -111,6 +111,18 @@ img{ max-width:100%; display:block; }
 .btn-sm{ padding: 9px 18px; font-size: 0.85rem; }
 .btn-lg{ padding: 15px 34px; font-size: 1rem; }
 
+/* btn-ghost on light backgrounds (white project/work cards) needs dark text —
+   the default light-gray text-on-ink color is meant for dark sections only
+   and is nearly invisible on white, so override it here. */
+.work-card .btn-ghost,
+.work-details .btn-ghost{
+  color: var(--text); border-color: var(--line-dark);
+}
+.work-card .btn-ghost:hover,
+.work-details .btn-ghost:hover{
+  border-color: var(--blue); color: var(--blue);
+}
+
 /* ================= SECTION SCAFFOLD ================= */
 main > section{ padding: 96px var(--pad); }
 .section-kicker{
