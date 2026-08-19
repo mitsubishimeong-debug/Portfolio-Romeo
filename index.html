@@ -19,15 +19,14 @@
   <div class="nav-inner">
     <a href="#hero" class="nav-brand">RC<span class="dot">.</span></a>
     <nav class="nav-links" id="navLinks">
-      <a href="#about">About</a>
+      <a href="#work">Work</a>
       <a href="#experience">Experience</a>
-      <a href="#crm">CRM</a>
-      <a href="#marketing">Marketing</a>
-      <a href="#projects">Projects</a>
+      <a href="#automation">Automation</a>
       <a href="#tools">Tools</a>
-      <a href="#education">Education</a>
+      <a href="#certifications">Certifications</a>
       <a href="#contact" class="nav-cta">Contact</a>
     </nav>
+    <a href="assets/Romeo-Cuyacot-CV.pdf" download class="nav-cv mono">↓ CV</a>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -36,17 +35,17 @@
 
 <main>
 
-  <!-- HERO -->
+  <!-- HERO (compact) -->
   <section class="hero" id="hero">
     <div class="hero-inner">
       <div class="hero-left">
         <p class="eyebrow mono">SALES &amp; OPERATIONS PROFESSIONAL</p>
-        <h1 class="hero-name">Romeo C.<br>Cuyacot</h1>
+        <h1 class="hero-name">Romeo C. Cuyacot</h1>
         <p class="hero-role">CRM &amp; Service Management <span class="sep">/</span> Digital Marketing <span class="sep">/</span> Workflow Automation</p>
         <p class="hero-statement">Turning real-world business processes into practical digital solutions.</p>
         <div class="hero-actions">
-          <a href="#experience" class="btn btn-primary">View Experience</a>
-          <a href="#projects" class="btn btn-ghost">See Projects</a>
+          <a href="#work" class="btn btn-primary">See What I've Built</a>
+          <a href="assets/Romeo-Cuyacot-CV.pdf" download class="btn btn-ghost">↓ Download CV</a>
         </div>
       </div>
       <div class="hero-right">
@@ -62,69 +61,125 @@
           </div>
           <div class="status-row">
             <span class="status-key">ORG</span>
-            <span class="status-val">CT Citimotors Las Piñas Corp.</span>
+            <span class="status-val">CT Citimotors Las Piñas</span>
           </div>
           <div class="status-row">
             <span class="status-key">SINCE</span>
             <span class="status-val">Dec 2025</span>
           </div>
-          <div class="status-line"></div>
-          <div class="status-tags">
-            <span class="tag">CRM Dashboards</span>
-            <span class="tag">Meta Ads</span>
-            <span class="tag">n8n Automation</span>
-            <span class="tag">Service Ops</span>
-          </div>
         </div>
       </div>
     </div>
-    <div class="hero-scroll mono" aria-hidden="true">SCROLL <span>↓</span></div>
+  </section>
+
+  <!-- FEATURED WORK — visual proof, immediately after hero -->
+  <section class="featured-work" id="work">
+    <p class="section-kicker mono">FEATURED WORK</p>
+    <h2 class="section-title">What I've Built</h2>
+    <p class="section-lead">Practical CRM dashboards, ad-performance reporting, and customer-communication automation — built to support real sales-process needs.</p>
+
+    <div class="work-grid">
+
+      <article class="work-card" data-details="details-crm">
+        <button class="work-shot" data-lightbox="assets/projects/citimotors-crm-dashboard.png" data-caption="Citimotors CRM Dashboard — Sales Pipeline Overview" aria-label="Enlarge Citimotors CRM Dashboard screenshot">
+          <img src="assets/projects/citimotors-crm-dashboard.png" alt="Citimotors CRM Dashboard showing sales pipeline overview, source breakdown, and pipeline conversion">
+        </button>
+        <div class="work-body">
+          <h3>Citimotors CRM Dashboard</h3>
+          <p class="work-problem"><span class="mono">PROBLEM</span> The sales team needed one place to track leads, conversations, and pipeline stage without losing visibility.</p>
+          <p class="work-solution"><span class="mono">SOLUTION</span> A CRM dashboard covering leads, customer info, conversations, and pipeline tracking, connected to a live data source.</p>
+          <p class="work-tools mono">HTML · JavaScript · Google Sheets · Google Apps Script · GitHub</p>
+          <div class="work-actions">
+            <button class="btn btn-ghost btn-sm" data-toggle-details="details-crm">View Details</button>
+            <a href="https://mitsubishimeong-debug.github.io/CT-Citimotors-Dashboard/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Live Demo →</a>
+          </div>
+          <div class="work-details" id="details-crm" hidden>
+            <p>The dashboard's Sales Pipeline Overview tracks leads through stages — Lead, Qualified, Application, Waiting for Requirements, Waiting for Bank Approval, Approved, Released, and Lost — with week-over-week deltas per stage.</p>
+            <p>A Source Breakdown panel separates AI-sourced leads (captured through the Messenger automation) from manually entered sales, so the sales team can see where leads are actually coming from.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="work-card" data-details="details-meta">
+        <button class="work-shot" data-lightbox="assets/projects/meta-ads-overview.png" data-caption="Meta Ads Performance Dashboard — Overview" aria-label="Enlarge Meta Ads Performance Dashboard screenshot">
+          <img src="assets/projects/meta-ads-overview.png" alt="Meta Ads Performance Dashboard showing spend, messages, CTR, CPC, CPM, budget pacing, and performance funnel">
+        </button>
+        <div class="work-body">
+          <h3>Meta Ads Performance Dashboard</h3>
+          <p class="work-problem"><span class="mono">PROBLEM</span> Campaign performance data was scattered, making it hard to check spend, reach, and results in one glance.</p>
+          <p class="work-solution"><span class="mono">SOLUTION</span> A live reporting dashboard for campaign monitoring, spend/budget pacing, and performance-funnel analysis.</p>
+          <p class="work-tools mono">n8n · Meta Ads Manager · Google Sheets · HTML/JavaScript</p>
+          <div class="work-actions">
+            <button class="btn btn-ghost btn-sm" data-toggle-details="details-meta">View Details</button>
+            <a href="https://mitsubishimeong-debug.github.io/mitsubishi-meta-ads-dashboard/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Live Demo →</a>
+          </div>
+          <div class="work-details" id="details-meta" hidden>
+            <p>The Overview page reports today's spend, messages, click-through rate, cost-per-click, cost-per-1000-impressions, and an account-health score, alongside budget pacing against the daily budget.</p>
+            <p>A separate Historical Intelligence view rolls up reach, impressions, and messages by week and by month, with CSV export for reporting.</p>
+            <button class="btn btn-ghost btn-sm work-more-shot" data-lightbox="assets/projects/meta-ads-historical.png" data-caption="Meta Ads Performance Dashboard — Historical Intelligence">View Historical Report Screenshot →</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="work-card" data-details="details-messenger">
+        <button class="work-shot" data-lightbox="assets/workflows/n8n-messenger-assistant.png" data-caption="Mitsubishi Messenger Assistant — n8n workflow" aria-label="Enlarge Mitsubishi Messenger Assistant n8n workflow screenshot">
+          <img src="assets/workflows/n8n-messenger-assistant.png" alt="n8n workflow diagram for the Mitsubishi Messenger Assistant, showing intake, routing, AI reply, and lead capture zones">
+        </button>
+        <div class="work-body">
+          <h3>Mitsubishi Messenger Assistant</h3>
+          <p class="work-problem"><span class="mono">PROBLEM</span> Facebook Messenger inquiries needed a fast first response without losing the option for a human to step in.</p>
+          <p class="work-solution"><span class="mono">SOLUTION</span> An n8n-based automation that auto-replies, extracts lead details, logs the conversation, and hands off to a human on request.</p>
+          <p class="work-tools mono">n8n · Facebook Messenger · APIs · AI-assisted workflow automation</p>
+          <div class="work-actions">
+            <a href="#automation" class="btn btn-primary btn-sm">See Full Workflow ↓</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="work-card work-card--placeholder" data-details="details-social">
+        <div class="work-shot work-shot--empty">
+          <span class="mono">SCREENSHOT PENDING</span>
+        </div>
+        <div class="work-body">
+          <h3>Social Media Automation Workflows</h3>
+          <p class="work-problem"><span class="mono">PROBLEM</span> Content preparation and posting across platforms needed a more consistent process.</p>
+          <p class="work-solution"><span class="mono">SOLUTION</span> Workflows supporting content preparation and posting for Facebook, Instagram, and TikTok.</p>
+          <p class="work-tools mono">Meta Business Suite · Facebook · Instagram · TikTok</p>
+        </div>
+      </article>
+
+      <article class="work-card work-card--wide">
+        <button class="work-shot" data-lightbox="assets/projects/nala-homepage.png" data-caption="NALA — Digital Marketing Services, homepage">
+          <img src="assets/projects/nala-homepage.png" alt="NALA Digital Marketing Services homepage">
+        </button>
+        <div class="work-body">
+          <h3>NALA — Digital Marketing Services</h3>
+          <p class="work-solution"><span class="mono">SOLUTION</span> A hands-on digital marketing and automation project focused on practical marketing workflows and digital tools.</p>
+          <div class="work-actions">
+            <a href="https://nala-digitalmarketingservices.xyz/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Visit Website →</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
   </section>
 
   <!-- CAREER PROCESS LINE -->
   <section class="process" id="process">
     <p class="section-kicker mono">CAREER TRAJECTORY</p>
     <h2 class="section-title">From the shop floor to the dashboard</h2>
-    <p class="section-lead">Eight years across technical service, operations management, and automotive sales — now applied to CRM, digital marketing, and workflow automation.</p>
+    <p class="section-lead">Eight years across technical service, operations management, and automotive sales — now applied to CRM, digital marketing, and workflow automation, through hands-on projects rather than years of software engineering experience.</p>
 
     <div class="process-line-wrap">
       <div class="process-line" id="processLine">
         <div class="process-track"></div>
-        <div class="process-node">
-          <span class="process-dot"></span>
-          <span class="process-label mono">01</span>
-          <span class="process-text">Technical Service</span>
-        </div>
-        <div class="process-node">
-          <span class="process-dot"></span>
-          <span class="process-label mono">02</span>
-          <span class="process-text">Service Operations</span>
-        </div>
-        <div class="process-node">
-          <span class="process-dot"></span>
-          <span class="process-label mono">03</span>
-          <span class="process-text">Area Management</span>
-        </div>
-        <div class="process-node">
-          <span class="process-dot"></span>
-          <span class="process-label mono">04</span>
-          <span class="process-text">Automotive Sales</span>
-        </div>
-        <div class="process-node">
-          <span class="process-dot"></span>
-          <span class="process-label mono">05</span>
-          <span class="process-text">CRM / Customer Mgmt</span>
-        </div>
-        <div class="process-node">
-          <span class="process-dot"></span>
-          <span class="process-label mono">06</span>
-          <span class="process-text">Digital Marketing</span>
-        </div>
-        <div class="process-node process-node--current">
-          <span class="process-dot"></span>
-          <span class="process-label mono">07</span>
-          <span class="process-text">Workflow Automation</span>
-        </div>
+        <div class="process-node"><span class="process-dot"></span><span class="process-label mono">01</span><span class="process-text">Technical Service</span></div>
+        <div class="process-node"><span class="process-dot"></span><span class="process-label mono">02</span><span class="process-text">Service Operations</span></div>
+        <div class="process-node"><span class="process-dot"></span><span class="process-label mono">03</span><span class="process-text">Area Management</span></div>
+        <div class="process-node"><span class="process-dot"></span><span class="process-label mono">04</span><span class="process-text">Automotive Sales</span></div>
+        <div class="process-node"><span class="process-dot"></span><span class="process-label mono">05</span><span class="process-text">CRM / Customer Mgmt</span></div>
+        <div class="process-node"><span class="process-dot"></span><span class="process-label mono">06</span><span class="process-text">Digital Marketing</span></div>
+        <div class="process-node process-node--current"><span class="process-dot"></span><span class="process-label mono">07</span><span class="process-text">Workflow Automation</span></div>
       </div>
     </div>
   </section>
@@ -281,129 +336,58 @@
     </div>
   </section>
 
-  <!-- FEATURED PROJECTS -->
-  <section class="projects" id="projects">
-    <p class="section-kicker mono">FEATURED PROJECTS</p>
-    <h2 class="section-title">Featured Projects</h2>
-    <p class="section-lead">Hands-on CRM, marketing, and automation projects built around real sales-process needs.</p>
-
-    <div class="project-grid">
-
-      <article class="project-card">
-        <div class="project-head">
-          <span class="project-index mono">P1</span>
-          <h3>Citimotors CRM Dashboard</h3>
-        </div>
-        <dl class="project-detail">
-          <dt>Problem</dt>
-          <dd>The sales team needed a practical way to keep track of leads, customer information, and conversations without losing pipeline visibility.</dd>
-          <dt>Solution</dt>
-          <dd>A CRM dashboard for managing leads, customer information, conversations, pipeline tracking, and sales activities.</dd>
-          <dt>What I Built</dt>
-          <dd>A working dashboard interface connected to a Google Sheets–based backend, hosted and accessible for the sales team to use day to day.</dd>
-          <dt>Tools Used</dt>
-          <dd>HTML, JavaScript, Google Sheets, Google Apps Script, GitHub</dd>
-        </dl>
-        <a href="https://mitsubishimeong-debug.github.io/CT-Citimotors-Dashboard/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">View Live Dashboard →</a>
-      </article>
-
-      <article class="project-card">
-        <div class="project-head">
-          <span class="project-index mono">P2</span>
-          <h3>Meta Ads Performance Dashboard</h3>
-        </div>
-        <dl class="project-detail">
-          <dt>Problem</dt>
-          <dd>Advertising performance data needed to be gathered and organized in one place to support campaign decisions.</dd>
-          <dt>Solution</dt>
-          <dd>A dashboard for campaign monitoring, advertising performance, campaign analysis, and decision support.</dd>
-          <dt>What I Built</dt>
-          <dd>An automated reporting workflow that pulls campaign data into a dashboard for review.</dd>
-          <dt>Tools Used</dt>
-          <dd>n8n, Meta Ads Manager, Google Sheets, HTML/JavaScript</dd>
-        </dl>
-        <a href="https://mitsubishimeong-debug.github.io/mitsubishi-meta-ads-dashboard/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">View Live Dashboard →</a>
-      </article>
-
-      <article class="project-card">
-        <div class="project-head">
-          <span class="project-index mono">P3</span>
-          <h3>Mitsubishi Messenger Assistant</h3>
-        </div>
-        <dl class="project-detail">
-          <dt>Problem</dt>
-          <dd>Customer inquiries on Facebook Messenger needed faster first responses without losing the option for a human to step in.</dd>
-          <dt>Solution</dt>
-          <dd>An n8n-based customer communication workflow supporting automated replies, lead extraction, conversation logging, and human takeover.</dd>
-          <dt>What I Built</dt>
-          <dd>A Messenger-connected automation workflow that logs conversations and captures lead details while allowing a human to take over any conversation.</dd>
-          <dt>Tools Used</dt>
-          <dd>n8n, Facebook Messenger, APIs, AI-assisted workflow automation</dd>
-        </dl>
-      </article>
-
-      <article class="project-card">
-        <div class="project-head">
-          <span class="project-index mono">P4</span>
-          <h3>Social Media Automation Workflows</h3>
-        </div>
-        <dl class="project-detail">
-          <dt>Problem</dt>
-          <dd>Content preparation and posting across multiple platforms needed a more consistent process.</dd>
-          <dt>Solution</dt>
-          <dd>Workflows supporting content preparation and posting processes for Facebook, Instagram, and TikTok.</dd>
-          <dt>What I Built</dt>
-          <dd>Practical workflows to support day-to-day social media content operations.</dd>
-          <dt>Tools Used</dt>
-          <dd>Meta Business Suite, Facebook, Instagram, TikTok</dd>
-        </dl>
-      </article>
-
-      <article class="project-card project-card--wide">
-        <div class="project-head">
-          <span class="project-index mono">P5</span>
-          <h3>NALA — Digital Marketing Services</h3>
-        </div>
-        <dl class="project-detail">
-          <dt>Solution</dt>
-          <dd>A hands-on digital marketing and automation project focused on practical marketing workflows and digital tools.</dd>
-        </dl>
-        <a href="https://nala-digitalmarketingservices.xyz/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Visit Website →</a>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- AUTOMATION & WORKFLOWS -->
+  <!-- WORKFLOW AUTOMATION -->
   <section class="automation" id="automation">
-    <div class="automation-inner">
-      <p class="section-kicker mono">AUTOMATION &amp; DIGITAL WORKFLOWS</p>
-      <h2 class="section-title">Automation &amp; Digital Workflows</h2>
-      <p class="section-lead">
-        Practical, project-based experience — built to support real sales and customer-communication needs, not
-        presented as years of professional automation engineering.
-      </p>
-      <div class="workflow-row mono">
-        <div class="workflow-step">
-          <span class="workflow-step-label">INPUT</span>
-          <span class="workflow-step-text">Customer message / lead form</span>
-        </div>
-        <span class="workflow-arrow">→</span>
-        <div class="workflow-step">
-          <span class="workflow-step-label">PROCESS</span>
-          <span class="workflow-step-text">n8n automated workflow</span>
-        </div>
-        <span class="workflow-arrow">→</span>
-        <div class="workflow-step">
-          <span class="workflow-step-label">LOG</span>
-          <span class="workflow-step-text">Google Sheets / CRM dashboard</span>
-        </div>
-        <span class="workflow-arrow">→</span>
-        <div class="workflow-step">
-          <span class="workflow-step-label">HANDOFF</span>
-          <span class="workflow-step-text">Human takeover when needed</span>
-        </div>
+    <p class="section-kicker mono">WORKFLOW AUTOMATION</p>
+    <h2 class="section-title">How the Messenger Automation Works</h2>
+    <p class="section-lead">Built in n8n, based only on what the actual workflow shows — a customer-communication automation for Facebook Messenger inquiries.</p>
+
+    <button class="automation-shot" data-lightbox="assets/workflows/n8n-messenger-assistant.png" data-caption="Mitsubishi Messenger Assistant — full n8n workflow" aria-label="Enlarge full n8n workflow screenshot">
+      <img src="assets/workflows/n8n-messenger-assistant.png" alt="Full n8n workflow for the Mitsubishi Messenger Assistant showing all automation zones">
+    </button>
+
+    <div class="workflow-row mono">
+      <div class="workflow-step">
+        <span class="workflow-step-label">01 · CUSTOMER MESSAGE IN</span>
+        <span class="workflow-step-text">Incoming Facebook Messenger message, checked for duplicates</span>
       </div>
+      <span class="workflow-arrow">→</span>
+      <div class="workflow-step">
+        <span class="workflow-step-label">02 · ROUTING</span>
+        <span class="workflow-step-text">Routed by message type or button pressed (models, requirements, application, contact)</span>
+      </div>
+      <span class="workflow-arrow">→</span>
+      <div class="workflow-step">
+        <span class="workflow-step-label">03 · CUSTOMER LOOKUP</span>
+        <span class="workflow-step-text">New vs. existing customer identified, chat record created or restored</span>
+      </div>
+      <span class="workflow-arrow">→</span>
+      <div class="workflow-step">
+        <span class="workflow-step-label">04 · AI REPLY</span>
+        <span class="workflow-step-text">Mitsubishi AI Assistant generates the reply, or sends the welcome carousel for new customers</span>
+      </div>
+      <span class="workflow-arrow">→</span>
+      <div class="workflow-step">
+        <span class="workflow-step-label">05 · LEAD &amp; LOG</span>
+        <span class="workflow-step-text">Lead details extracted and the conversation saved to the conversation log</span>
+      </div>
+      <span class="workflow-arrow">→</span>
+      <div class="workflow-step">
+        <span class="workflow-step-label">06 · HUMAN TAKEOVER</span>
+        <span class="workflow-step-text">Admin takeover available at any point in the conversation</span>
+      </div>
+    </div>
+
+    <p class="automation-note">Related reporting automations I've also built — Meta Ads performance data collection and an AI-assisted ads analyst workflow:</p>
+    <div class="automation-strip">
+      <button class="automation-thumb" data-lightbox="assets/workflows/n8n-meta-ads-dashboard.png" data-caption="Meta Ads Dashboard — n8n reporting workflow">
+        <img src="assets/workflows/n8n-meta-ads-dashboard.png" alt="n8n workflow collecting Meta Ads campaign, creative, and audience data">
+        <span class="automation-thumb-label mono">Meta Ads Data Collection</span>
+      </button>
+      <button class="automation-thumb" data-lightbox="assets/workflows/n8n-meta-ai-analyst.png" data-caption="Meta AI Analyst — n8n workflow">
+        <img src="assets/workflows/n8n-meta-ai-analyst.png" alt="n8n workflow generating an AI-assisted Meta Ads performance summary">
+        <span class="automation-thumb-label mono">AI Ads Performance Summary</span>
+      </button>
     </div>
   </section>
 
@@ -449,7 +433,76 @@
     </div>
   </section>
 
-  <!-- EDUCATION & RECOGNITION -->
+  <!-- CERTIFICATIONS & RECOGNITION (visual) -->
+  <section class="certifications" id="certifications">
+    <p class="section-kicker mono">CERTIFICATIONS &amp; RECOGNITION</p>
+    <h2 class="section-title">Certifications &amp; Recognition</h2>
+    <p class="section-lead">Actual certificates and awards — click any thumbnail to view full size.</p>
+
+    <div class="cert-grid">
+
+      <button class="cert-card" data-lightbox="assets/certs/cert-huawei-excellence-2019.png" data-caption="Certificate of Excellence — Maintenance Engineer 2019, Top 3 Performer, Huawei / Esquire">
+        <img src="assets/certs/cert-huawei-excellence-2019.png" alt="Certificate of Excellence, Maintenance Engineer 2019, Top 3 Performer">
+        <div class="cert-info">
+          <p class="cert-title">Certificate of Excellence — Maintenance Engineer 2019 (Top 3 Performer)</p>
+          <p class="cert-meta mono">Huawei · Esquire — Jan 13, 2020</p>
+        </div>
+      </button>
+
+      <button class="cert-card" data-lightbox="assets/certs/cert-best-technician-esquire.png" data-caption="Best Technician award, Esquiretech Corp.">
+        <img src="assets/certs/cert-best-technician-esquire.png" alt="Best Technician award certificate from Esquiretech Corp">
+        <div class="cert-info">
+          <p class="cert-title">Best Technician</p>
+          <p class="cert-meta mono">Esquiretech Corp. — Dec 20, 2019</p>
+        </div>
+      </button>
+
+      <button class="cert-card" data-lightbox="assets/certs/cert-huawei-experience-consultant.png" data-caption="Huawei Customer Service Center Certification — Experience Consultant's">
+        <img src="assets/certs/cert-huawei-experience-consultant.png" alt="Huawei Customer Service Center Certification, Experience Consultant's">
+        <div class="cert-info">
+          <p class="cert-title">Huawei Customer Service Center Certification — Experience Consultant's</p>
+          <p class="cert-meta mono">Huawei — Valid through Jun 25, 2023</p>
+        </div>
+      </button>
+
+      <button class="cert-card" data-lightbox="assets/certs/cert-huawei-technical-consultant.png" data-caption="Huawei Customer Service Center Certification — Technical Consultant's">
+        <img src="assets/certs/cert-huawei-technical-consultant.png" alt="Huawei Customer Service Center Certification, Technical Consultant's">
+        <div class="cert-info">
+          <p class="cert-title">Huawei Customer Service Center Certification — Technical Consultant's</p>
+          <p class="cert-meta mono">Huawei — Valid through Jun 25, 2023</p>
+        </div>
+      </button>
+
+      <button class="cert-card" data-lightbox="assets/certs/cert-huawei-store-manager.png" data-caption="Huawei Customer Service Center Certification — Store Manager's">
+        <img src="assets/certs/cert-huawei-store-manager.png" alt="Huawei Customer Service Center Certification, Store Manager's">
+        <div class="cert-info">
+          <p class="cert-title">Huawei Customer Service Center Certification — Store Manager's</p>
+          <p class="cert-meta mono">Huawei — Valid through Jun 29, 2023</p>
+        </div>
+      </button>
+
+      <button class="cert-card" data-lightbox="assets/certs/cert-dualtech-productivity-time.png" data-caption="Productivity and Time Management Seminar, Dualtech Training Center">
+        <img src="assets/certs/cert-dualtech-productivity-time.png" alt="Productivity and Time Management Seminar certificate, Dualtech Training Center">
+        <div class="cert-info">
+          <p class="cert-title">Productivity and Time Management Seminar</p>
+          <p class="cert-meta mono">Dualtech Training Center — Jul 21, 2018</p>
+        </div>
+      </button>
+
+      <button class="cert-card" data-lightbox="assets/certs/cert-dualtech-leadership.png" data-caption="Leadership Training, Dualtech Training Center">
+        <img src="assets/certs/cert-dualtech-leadership.png" alt="Leadership Training certificate, Dualtech Training Center">
+        <div class="cert-info">
+          <p class="cert-title">Leadership Training</p>
+          <p class="cert-meta mono">Dualtech Training Center</p>
+        </div>
+      </button>
+
+    </div>
+
+    <p class="cert-footnote">Also holds: Technical Certificates / NC II Passer, and completed Problem-Solving Training (certificates not pictured).</p>
+  </section>
+
+  <!-- EDUCATION -->
   <section class="education" id="education">
     <div class="education-inner">
       <div class="education-col">
@@ -468,19 +521,8 @@
         </div>
       </div>
       <div class="education-col">
-        <p class="section-kicker mono">RECOGNITION</p>
-        <h2 class="section-title">Certifications &amp; Recognition</h2>
-        <ul class="recognition-list">
-          <li>Technical Certificates / NC II Passer</li>
-          <li>Top 2 Service Engineer — Huawei PH</li>
-          <li>Top 1 Service Engineer — Esquire</li>
-          <li>Store Manager Certificate</li>
-          <li>Experience Consultant Certificate</li>
-          <li>Leadership Training</li>
-          <li>Time Management Training</li>
-          <li>Problem-Solving Training</li>
-        </ul>
-        <p class="section-kicker mono lang-kicker">LANGUAGES</p>
+        <p class="section-kicker mono">LANGUAGES</p>
+        <h2 class="section-title">Languages</h2>
         <div class="pill-row">
           <span class="pill">English</span>
           <span class="pill">Filipino</span>
@@ -506,8 +548,11 @@
           <span class="contact-label">LOCATION</span>Las Piñas, Metro Manila, PH
         </span>
       </div>
-      <a href="mailto:[email protected]" class="btn btn-primary btn-lg">Send an Email</a>
-      <p class="contact-note">* Replace the email, phone number, and any social/LinkedIn links above with your actual contact details before publishing.</p>
+      <div class="contact-actions">
+        <a href="mailto:[email protected]" class="btn btn-primary btn-lg">Send an Email</a>
+        <a href="assets/Romeo-Cuyacot-CV.pdf" download class="btn btn-ghost btn-lg">↓ Download CV</a>
+      </div>
+      <p class="contact-note">* Replace the email, phone number, and any LinkedIn/social links above with your actual contact details before publishing.</p>
     </div>
   </section>
 
@@ -519,6 +564,15 @@
     <p class="mono footer-year">© <span id="year"></span></p>
   </div>
 </footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+  <figure class="lightbox-figure">
+    <img id="lightboxImg" src="" alt="">
+    <figcaption id="lightboxCaption" class="mono"></figcaption>
+  </figure>
+</div>
 
 <script src="script.js"></script>
 </body>
