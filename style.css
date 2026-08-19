@@ -127,8 +127,12 @@ img{ max-width:100%; display:block; }
 main > section{ padding: 96px var(--pad); }
 .section-kicker{
   color: var(--blue); font-size: 0.78rem; font-weight:500; letter-spacing: 0.12em;
-  margin: 0 0 14px 0;
+  margin: 0 0 14px 0; display:flex; align-items:center; gap:8px;
 }
+.section-kicker::before{
+  content:""; width:7px; height:7px; background: var(--blue); display:inline-block; flex-shrink:0;
+}
+.crm .section-kicker::before, .contact .section-kicker::before{ background: var(--amber); }
 .section-title{
   font-size: clamp(1.7rem, 3vw, 2.4rem); font-weight:600; margin: 0 0 16px 0;
   max-width: 720px;
@@ -190,6 +194,71 @@ main > section{ padding: 96px var(--pad); }
 .tag{
   font-size: 0.72rem; padding: 5px 10px; border: 1px solid var(--line-dark); border-radius: 3px;
   color: var(--text-on-ink-muted);
+}
+
+/* ================= OPERATING MODEL PANEL (hero) ================= */
+.model-panel, .systems-status{
+  border: 1px solid var(--line-dark); border-radius: 4px; padding: 18px 20px;
+  background: var(--ink-soft); margin-bottom: 14px;
+}
+.systems-status{ margin-bottom: 0; }
+.panel-heading{ font-size: 0.7rem; color: var(--text-on-ink-muted); letter-spacing: 0.12em; margin: 0 0 16px 0; }
+.model-chain{ display:flex; flex-direction:column; }
+.model-step{
+  display:grid; grid-template-columns: 14px 1fr; column-gap: 12px;
+  position:relative; padding-bottom: 15px;
+}
+.model-step:last-child{ padding-bottom:0; }
+.model-step::before{
+  content:""; position:absolute; left:6px; top:13px; bottom:-4px; width:1px;
+  background: var(--line-dark);
+}
+.model-step:last-child::before{ display:none; }
+.model-step-dot{
+  width:8px; height:8px; border-radius:50%; background: var(--ink-soft);
+  border: 2px solid var(--blue); margin-top:2px; position:relative; z-index:2;
+}
+.model-step:last-child .model-step-dot{ border-color: var(--amber); }
+.model-step-text{ font-size: 0.78rem; color: var(--text-on-ink); line-height:1.3; }
+.model-loop{
+  display:flex; align-items:center; gap:8px; margin: 14px 0 0 0; padding-top: 13px;
+  border-top: 1px dashed var(--line-dark); font-size: 0.7rem; color: var(--amber);
+}
+
+.status-list-row{
+  display:flex; align-items:center; justify-content: space-between; gap: 12px;
+  padding: 9px 0; border-bottom: 1px solid var(--line-dark); font-size: 0.76rem;
+}
+.status-list-row:last-child{ border-bottom:none; }
+.status-list-name{ display:flex; align-items:center; gap:9px; color: var(--text-on-ink); }
+.status-list-state{ color: var(--text-on-ink-muted); font-size: 0.66rem; letter-spacing:0.06em; flex-shrink:0; }
+.dot-live{
+  width:6px; height:6px; border-radius:50%; background: #4CAF7D; display:inline-block; flex-shrink:0;
+}
+
+/* ================= SYSTEM FIELDS (evidence block) ================= */
+.system-fields{
+  display:grid; grid-template-columns: repeat(3, 1fr); gap:1px;
+  background: var(--line); border: 1px solid var(--line); border-radius: 3px;
+  overflow:hidden; margin: 2px 0 6px;
+}
+.system-fields > div{ background:#fff; padding: 10px 12px; }
+.system-field-label{
+  display:block; font-size: 0.6rem; color: var(--text-muted); letter-spacing: 0.08em; margin-bottom: 4px;
+}
+.system-field-value{ font-size: 0.76rem; color: var(--text); line-height:1.4; }
+
+/* ================= CASE BADGE ROW / STATUS BADGE ================= */
+.case-badge-row{
+  display:flex; align-items:flex-start; justify-content: space-between; gap: 10px;
+  padding: 22px 24px 0 24px;
+}
+.case-badge-row .case-badge{ padding:0; flex:1; }
+.status-badge{
+  display:inline-flex; align-items:center; gap:6px; flex-shrink:0;
+  font-size: 0.62rem; letter-spacing: 0.06em; color: var(--text-muted);
+  border: 1px solid var(--line); border-radius: 20px; padding: 4px 10px 4px 8px;
+  white-space: nowrap;
 }
 
 /* ================= PROCESS LINE (signature element) ================= */
@@ -343,22 +412,27 @@ main > section{ padding: 96px var(--pad); }
 /* ================= WHAT I DO / HOW I APPROACH ================= */
 .what-i-do{ padding-bottom: 32px; }
 .approach{ padding-top: 0; }
-.approach-chain{
-  display:flex; flex-wrap: wrap; align-items:center; gap: 10px;
-  font-size: 0.8rem; color: var(--text); margin: 24px 0 16px 0;
+.approach-grid{
+  display:grid; grid-template-columns: repeat(6, 1fr); gap:1px;
+  background: var(--line); border: 1px solid var(--line); border-radius: 3px;
+  overflow:hidden; margin: 28px 0 20px 0;
 }
-.approach-chain span:not(.loop-arrow){
-  background:#fff; border: 1px solid var(--line); border-radius: 3px;
-  padding: 8px 12px; white-space: nowrap;
+.approach-stage{
+  background:#fff; padding: 22px 18px; display:flex; flex-direction:column; gap: 6px;
 }
-.approach-chain .approach-human{ border-color: var(--amber); color: var(--amber); font-weight:600; }
+.approach-num{ font-size: 0.72rem; color: var(--blue); }
+.approach-stage h3{ font-size: 1rem; font-weight:600; margin: 2px 0 0 0; }
+.approach-stage p{ font-size: 0.82rem; color: var(--text-muted); margin:0; }
+.approach-stage--human{ background: var(--paper-alt); }
+.approach-stage--human .approach-num,
+.approach-stage--human h3{ color: var(--amber); }
 .approach-note{ color: var(--text-muted); font-size: 0.9rem; max-width: 640px; }
 
 /* ================= ECOSYSTEM (loop map) ================= */
 .ecosystem{ background: var(--paper-alt); }
 .loop-grid{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
 .loop-card{
-  background:#fff; border: 1px solid var(--line); border-radius: 6px; padding: 20px 22px;
+  background:#fff; border: 1px solid var(--line); border-radius: 4px; padding: 20px 22px;
 }
 .loop-label{ font-size: 0.7rem; color: var(--blue); margin: 0 0 12px 0; }
 .loop-chain{
@@ -384,7 +458,7 @@ main > section{ padding: 96px var(--pad); }
 .featured-work{ background: var(--paper); padding-top: 64px; }
 .work-grid{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 .work-card{
-  background:#fff; border: 1px solid var(--line); border-radius: 8px; overflow:hidden;
+  background:#fff; border: 1px solid var(--line); border-radius: 4px; overflow:hidden;
   display:flex; flex-direction:column;
 }
 .work-card--wide{ grid-column: 1 / -1; }
@@ -394,7 +468,7 @@ main > section{ padding: 96px var(--pad); }
   cursor: zoom-in; background: var(--paper-alt); position:relative; overflow:hidden;
 }
 .work-shot img{ width:100%; height:100%; object-fit: cover; object-position: top; transition: transform .3s ease; }
-.work-shot:hover img{ transform: scale(1.03); }
+.work-shot:hover img{ transform: scale(1.01); }
 .work-shot::after{
   content:"⤢ Enlarge"; position:absolute; bottom:10px; right:10px; font-family: var(--font-mono);
   font-size: 0.68rem; color:#fff; background: rgba(18,21,28,0.72); padding: 5px 9px; border-radius:3px;
@@ -529,6 +603,8 @@ main > section{ padding: 96px var(--pad); }
   .work-grid{ grid-template-columns: 1fr; }
   .cert-grid{ grid-template-columns: repeat(2, 1fr); }
   .nav-cv{ display:none; }
+  .approach-grid{ grid-template-columns: repeat(3, 1fr); }
+  .system-fields{ grid-template-columns: 1fr; }
 }
 
 @media (max-width: 720px){
@@ -546,6 +622,7 @@ main > section{ padding: 96px var(--pad); }
   .tools-grid{ grid-template-columns: 1fr; }
   .cert-grid{ grid-template-columns: 1fr 1fr; }
   .workflow-arrow{ display:none; }
+  .approach-grid{ grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 480px){
