@@ -164,26 +164,39 @@ main > section{ padding: 96px var(--pad); }
 }
 .hero-inner{
   max-width: var(--max); margin: 0 auto; width:100%;
-  display:grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items:center;
-  padding: 44px 0;
+  display:grid; grid-template-columns: 1.25fr 1fr; gap: 56px; align-items:center;
+  padding: 48px 0;
+}
+.hero-left{
+  padding-right: 8px;
 }
 .eyebrow{
-  color: var(--amber); font-size: 0.76rem; font-weight:500; margin: 0 0 14px 0;
+  display:flex; align-items:center; gap:9px;
+  color: var(--amber); font-size: 0.72rem; font-weight:500; letter-spacing: 0.1em;
+  margin: 0 0 18px 0;
+}
+.eyebrow-mark{
+  width:7px; height:7px; background: var(--amber); display:inline-block; flex-shrink:0;
 }
 .hero-name{
-  font-size: clamp(1.9rem, 3.6vw, 2.9rem); line-height: 1.08; font-weight:700;
-  letter-spacing: -0.01em; margin: 0 0 14px 0; overflow-wrap: break-word;
+  font-size: clamp(2.2rem, 4.2vw, 3.4rem); line-height: 1.06; font-weight:700;
+  letter-spacing: -0.015em; margin: 0 0 16px 0; overflow-wrap: break-word;
 }
 .hero-role{
   font-size: clamp(0.92rem, 1.3vw, 1.05rem); color: var(--text-on-ink-muted);
-  margin: 0 0 14px 0; font-weight: 500;
+  margin: 0 0 16px 0; font-weight: 500; padding-bottom: 18px;
+  border-bottom: 1px solid var(--line-dark); max-width: 520px;
 }
 .hero-role .sep{ color: var(--blue); margin: 0 6px; }
 .hero-statement{
   font-family: var(--font-display); font-size: 1.1rem; font-weight:500;
-  color: var(--text-on-ink); margin: 0 0 24px 0; max-width: 460px;
+  color: var(--text-on-ink); margin: 0 0 28px 0; max-width: 460px;
 }
 .hero-actions{ display:flex; gap: 14px; flex-wrap: wrap; }
+
+@media (min-width: 881px){
+  .hero-right{ padding-left: 40px; border-left: 1px solid var(--line-dark); }
+}
 
 .status-panel{
   border: 1px solid var(--line-dark); border-radius: 6px; padding: 18px 20px;
@@ -206,33 +219,48 @@ main > section{ padding: 96px var(--pad); }
   color: var(--text-on-ink-muted);
 }
 
-/* ================= OPERATING MODEL PANEL (hero) ================= */
-.model-panel, .systems-status{
-  border: 1px solid var(--line-dark); border-radius: 4px; padding: 18px 20px;
-  background: var(--ink-soft); margin-bottom: 14px;
+/* ================= OPERATIONS CONSOLE (hero) ================= */
+.console-panel{
+  border: 1px solid var(--line-dark); border-radius: 4px;
+  background: var(--ink-soft); overflow:hidden;
 }
-.systems-status{ margin-bottom: 0; }
+.console-header{
+  display:flex; align-items:center; gap:9px;
+  padding: 13px 20px; font-size: 0.68rem; letter-spacing: 0.14em;
+  color: var(--text-on-ink-muted); border-bottom: 1px solid var(--line-dark);
+  background: rgba(255,255,255,0.02);
+}
+.console-live-dot{
+  width:6px; height:6px; border-radius:50%; background: var(--green); flex-shrink:0;
+  animation: pulse 1.8s ease-in-out infinite;
+}
+.console-block{ padding: 20px 20px; }
+.console-divider{ height:1px; background: var(--line-dark); margin: 0 20px; }
+
 .panel-heading{ font-size: 0.7rem; color: var(--text-on-ink-muted); letter-spacing: 0.12em; margin: 0 0 16px 0; }
 .model-chain{ display:flex; flex-direction:column; }
 .model-step{
-  display:grid; grid-template-columns: 14px 1fr; column-gap: 12px;
+  display:grid; grid-template-columns: 24px 14px 1fr; column-gap: 10px;
   position:relative; padding-bottom: 15px;
 }
 .model-step:last-child{ padding-bottom:0; }
 .model-step::before{
-  content:""; position:absolute; left:6px; top:13px; bottom:-4px; width:1px;
+  content:""; position:absolute; left:30px; top:13px; bottom:-4px; width:1px;
   background: var(--line-dark);
 }
 .model-step:last-child::before{ display:none; }
+.model-step-num{
+  font-size: 0.62rem; color: var(--text-on-ink-muted); padding-top: 3px; letter-spacing: 0.04em;
+}
 .model-step-dot{
   width:8px; height:8px; border-radius:50%; background: var(--ink-soft);
   border: 2px solid var(--blue); margin-top:2px; position:relative; z-index:2;
 }
 .model-step:last-child .model-step-dot{ border-color: var(--amber); }
-.model-step-text{ font-size: 0.78rem; color: var(--text-on-ink); line-height:1.3; }
+.model-step-text{ font-size: 0.78rem; color: var(--text-on-ink); line-height:1.3; font-family: var(--font-body); }
 .model-loop{
   display:flex; align-items:center; gap:8px; margin: 14px 0 0 0; padding-top: 13px;
-  border-top: 1px dashed var(--line-dark); font-size: 0.7rem; color: var(--amber);
+  border-top: 1px dashed var(--line-dark); font-size: 0.7rem; color: var(--amber); font-family: var(--font-mono);
 }
 
 .status-list-row{
@@ -243,8 +271,9 @@ main > section{ padding: 96px var(--pad); }
 .status-list-name{ display:flex; align-items:center; gap:9px; color: var(--text-on-ink); }
 .status-list-state{ color: var(--text-on-ink-muted); font-size: 0.66rem; letter-spacing:0.06em; flex-shrink:0; }
 .dot-live{
-  width:6px; height:6px; border-radius:50%; background: #4CAF7D; display:inline-block; flex-shrink:0;
+  width:6px; height:6px; border-radius:50%; background: var(--green); display:inline-block; flex-shrink:0;
 }
+.dot-live--deployed{ background: var(--blue); }
 
 /* ================= SYSTEM FIELDS (evidence block) ================= */
 .system-fields{
@@ -710,7 +739,8 @@ main > section{ padding: 96px var(--pad); }
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 880px){
-  .hero-inner{ grid-template-columns: 1fr; padding: 40px 0; gap: 28px; }
+  .hero-inner{ grid-template-columns: 1fr; padding: 40px 0; gap: 32px; }
+  .hero-left{ padding-right: 0; }
   .crm-grid{ grid-template-columns: repeat(2, 1fr); }
   .tools-grid{ grid-template-columns: 1fr 1fr; }
   .tools-grid--5{ grid-template-columns: 1fr 1fr; }
