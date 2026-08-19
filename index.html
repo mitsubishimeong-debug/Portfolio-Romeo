@@ -192,7 +192,11 @@
 
     <div class="work-grid">
 
-      <article class="work-card" data-details="details-meta-dashboard">
+      <article class="work-card work-card--monitor" data-details="details-meta-dashboard">
+        <div class="system-header">
+          <span class="system-header-num mono">SYSTEM 01 · MARKETING OPERATIONS</span>
+          <span class="system-header-type system-header-type--monitor">Monitoring Interface</span>
+        </div>
         <div class="case-badge-row">
           <p class="case-badge mono">CENTRALIZED ADVERTISING DATA &amp; REPORTING SYSTEM</p>
           <span class="status-badge mono"><span class="dot-live"></span>IN USE</span>
@@ -217,14 +221,18 @@
           <div class="work-details" id="details-meta-dashboard" hidden>
             <p><span class="mono detail-label">WHY IT MATTERED</span> Without a single source of historical data, every monthly report meant re-opening Meta Ads Manager repeatedly and manually reconciling numbers — repetitive work that also made it harder to spot longer-term patterns across campaigns.</p>
             <p><span class="mono detail-label">HOW IT WORKS</span> Today's spend, messages, click-through rate, cost-per-click, cost-per-1000-impressions, and an account-health score are reported on the Overview page alongside budget pacing. A separate Historical Intelligence view rolls up reach, impressions, and messages by week and by month, with CSV export for reporting.</p>
-            <p><span class="mono detail-label">HUMAN ROLE</span> The dashboard reports and organizes the data — campaign strategy and budget decisions stay with me.</p>
+            <p><span class="mono detail-label detail-label--human">HUMAN ROLE</span> The dashboard reports and organizes the data — campaign strategy and budget decisions stay with me.</p>
             <p><span class="mono detail-label">RESULT</span> In active use for monthly Meta Ads reporting and campaign analysis. Historical campaign data from 2023 to present is centralized in one dashboard, allowing me to extract the metrics and spend required for reporting without repeatedly pulling them manually from Meta Ads Manager. The dashboard is also used as a data source when developing campaign strategy.</p>
             <button class="btn btn-ghost btn-sm work-more-shot" data-lightbox="assets/projects/meta-ads-historical.png" data-caption="Meta Ads Dashboard — Historical Intelligence">View Historical Report Screenshot →</button>
           </div>
         </div>
       </article>
 
-      <article class="work-card" data-details="details-messenger">
+      <article class="work-card work-card--comms" data-details="details-messenger">
+        <div class="system-header">
+          <span class="system-header-num mono">SYSTEM 02 · CUSTOMER COMMUNICATION</span>
+          <span class="system-header-type system-header-type--comms">Communication Flow</span>
+        </div>
         <div class="case-badge-row">
           <p class="case-badge mono">HUMAN-IN-THE-LOOP CUSTOMER SERVICE AUTOMATION</p>
           <span class="status-badge mono"><span class="dot-live"></span>DEPLOYED</span>
@@ -239,6 +247,14 @@
             <div><span class="system-field-label">PROCESS</span><span class="system-field-value">Intake → routing → AI reply → lead capture → escalation</span></div>
             <div><span class="system-field-label">DECISION</span><span class="system-field-value">Whether AI or human handles the conversation</span></div>
           </div>
+          <div class="type-visual">
+            <span class="type-visual-label">CONVERSATION CONTROL</span>
+            <div class="comms-toggle mono">
+              <span class="comms-node">AI HANDLES</span>
+              <span class="comms-swap">⇄</span>
+              <span class="comms-node comms-node--human">HUMAN TAKEOVER</span>
+            </div>
+          </div>
           <p class="work-problem"><span class="mono">BUILT BECAUSE</span> There are times I can't personally answer incoming Messenger inquiries right away, and a slow first response can lose a customer's interest.</p>
           <p class="work-solution"><span class="mono">SYSTEM</span> An automation that receives inquiries, retrieves the information needed to respond, and uses AI to handle what it reasonably can — escalating to me through Telegram when a conversation needs human judgment.</p>
           <p class="work-tools mono">n8n · Facebook Messenger · Telegram · AI API</p>
@@ -249,13 +265,17 @@
           <div class="work-details" id="details-messenger" hidden>
             <p><span class="mono detail-label">WHY IT MATTERED</span> Customers reach out outside of the hours I can personally monitor Messenger. Without a first response system, inquiries sat unanswered until I was available again.</p>
             <p><span class="mono detail-label">HOW IT WORKS</span> Incoming messages are checked for duplicates and routed by type. New vs. existing customers are identified, the AI assistant generates a reply or sends the welcome carousel, lead details are extracted and logged — and at any point, I can take over the conversation directly.</p>
-            <p><span class="mono detail-label">HUMAN ROLE</span> This is not a full chatbot replacement — the design principle is that AI handles what it reasonably can, and I take over when a conversation needs judgment or capability the AI doesn't have. I can switch AI → Human and Human → AI at any point.</p>
+            <p><span class="mono detail-label detail-label--human">HUMAN ROLE</span> This is not a full chatbot replacement — the design principle is that AI handles what it reasonably can, and I take over when a conversation needs judgment or capability the AI doesn't have. I can switch AI → Human and Human → AI at any point.</p>
             <p><span class="mono detail-label">RESULT</span> Deployed for live customer-message handling. The assistant can respond to supported inquiries, retrieve relevant information, capture lead details, and escalate conversations to Telegram when human intervention is required. Human takeover and return-to-AI control are available during the conversation.</p>
           </div>
         </div>
       </article>
 
-      <article class="work-card" data-details="details-crm">
+      <article class="work-card work-card--pipeline" data-details="details-crm">
+        <div class="system-header">
+          <span class="system-header-num mono">SYSTEM 03 · SALES OPERATIONS</span>
+          <span class="system-header-type system-header-type--pipeline">Pipeline Interface</span>
+        </div>
         <div class="case-badge-row">
           <p class="case-badge mono">BUSINESS WORKFLOW SYSTEM</p>
           <span class="status-badge mono"><span class="dot-live"></span>IN USE</span>
@@ -270,6 +290,16 @@
             <div><span class="system-field-label">PROCESS</span><span class="system-field-value">Tracks each stage from Lead through Approved / Released / Lost</span></div>
             <div><span class="system-field-label">DECISION</span><span class="system-field-value">Where a lead stands &amp; what needs follow-up</span></div>
           </div>
+          <div class="type-visual">
+            <span class="type-visual-label">PIPELINE STAGES</span>
+            <div class="pipeline-strip mono">
+              <span class="pipeline-stage">Lead</span><span class="pipeline-sep">›</span>
+              <span class="pipeline-stage">Qualified</span><span class="pipeline-sep">›</span>
+              <span class="pipeline-stage">Application</span><span class="pipeline-sep">›</span>
+              <span class="pipeline-stage">Bank Approval</span><span class="pipeline-sep">›</span>
+              <span class="pipeline-stage pipeline-stage--end">Released</span>
+            </div>
+          </div>
           <p class="work-problem"><span class="mono">BUILT BECAUSE</span> The sales team needed one place to track leads, follow-ups, and pipeline stage — built from years of working inside CRM and after-sales systems, not from wanting a portfolio project.</p>
           <p class="work-solution"><span class="mono">SYSTEM</span> A CRM covering the full sales workflow: customer inquiry, follow-up, pipeline stage, application, quotation, vehicle details and bulletins, and monitoring — connected to a live data source.</p>
           <p class="work-tools mono">HTML · JavaScript · Google Sheets · Google Apps Script · GitHub</p>
@@ -280,13 +310,17 @@
           <div class="work-details" id="details-crm" hidden>
             <p><span class="mono detail-label">WHY IT MATTERED</span> Without a shared pipeline view, leads and their current stage lived in scattered notes and memory — making it easy to lose visibility on where a customer actually stood in the process.</p>
             <p><span class="mono detail-label">HOW IT WORKS</span> The Sales Pipeline Overview tracks leads through Lead, Qualified, Application, Waiting for Requirements, Waiting for Bank Approval, Approved, Released, and Lost, with week-over-week deltas per stage. A Source Breakdown panel separates AI-sourced leads (captured through the Messenger automation) from manually entered sales.</p>
-            <p><span class="mono detail-label">HUMAN ROLE</span> The system organizes and surfaces the data; qualifying leads, negotiating, and closing sales remain entirely human work.</p>
+            <p><span class="mono detail-label detail-label--human">HUMAN ROLE</span> The system organizes and surfaces the data; qualifying leads, negotiating, and closing sales remain entirely human work.</p>
             <p><span class="mono detail-label">RESULT</span> Actively used to monitor the sales pipeline and customer records. The system consolidates lead status, source, application progress, quotation-related information, vehicle details, and sales outcomes into one operational view, making current pipeline status visible without relying on scattered notes or separate tracking.</p>
           </div>
         </div>
       </article>
 
-      <article class="work-card" data-details="details-analyst">
+      <article class="work-card work-card--decision" data-details="details-analyst">
+        <div class="system-header">
+          <span class="system-header-num mono">SYSTEM 04 · MARKETING OPERATIONS</span>
+          <span class="system-header-type system-header-type--decision">Decision-Support Interface</span>
+        </div>
         <div class="case-badge-row">
           <p class="case-badge mono">AI-ASSISTED DECISION SUPPORT</p>
           <span class="status-badge mono"><span class="dot-live"></span>IN USE</span>
@@ -301,6 +335,14 @@
             <div><span class="system-field-label">PROCESS</span><span class="system-field-value">Reads data → surfaces patterns → generates ideas</span></div>
             <div><span class="system-field-label">DECISION</span><span class="system-field-value">What campaign action, if any, to take</span></div>
           </div>
+          <div class="type-visual">
+            <span class="type-visual-label">ANALYSIS FLOW</span>
+            <div class="decision-flow mono">
+              <span class="decision-flow-node">Performance Data</span><span class="decision-flow-arrow">→</span>
+              <span class="decision-flow-node">Pattern Detected</span><span class="decision-flow-arrow">→</span>
+              <span class="decision-flow-node decision-flow-node--out">Suggested Action</span>
+            </div>
+          </div>
           <p class="work-problem"><span class="mono">BUILT BECAUSE</span> Campaign data by itself doesn't say what to do next — reading raw numbers and deciding on action from intuition alone isn't reliable.</p>
           <p class="work-solution"><span class="mono">SYSTEM</span> An automation that analyzes available Meta advertising data, surfaces patterns and performance issues, and generates decision-support ideas for what might be worth doing next.</p>
           <p class="work-tools mono">n8n · Google Gemini · Meta Ads data · Google Sheets</p>
@@ -310,29 +352,56 @@
           <div class="work-details" id="details-analyst" hidden>
             <p><span class="mono detail-label">WHY IT MATTERED</span> Reviewing campaign performance manually each time meant analysis only happened when I had time to sit down and dig through the dashboard myself.</p>
             <p><span class="mono detail-label">HOW IT WORKS</span> The workflow reads campaign, ad, and creative performance data alongside historical context, then uses AI to generate a summary of patterns and possible next steps.</p>
-            <p><span class="mono detail-label">HUMAN ROLE</span> The AI does not make business decisions. It surfaces patterns and ideas — I remain the one who decides what action, if any, to take.</p>
+            <p><span class="mono detail-label detail-label--human">HUMAN ROLE</span> The AI does not make business decisions. It surfaces patterns and ideas — I remain the one who decides what action, if any, to take.</p>
             <p><span class="mono detail-label">RESULT</span> Actively used as an AI-assisted decision-support tool for Meta Ads analysis. Its observations and recommendations are used as inputs when developing and adjusting campaign strategy. Final decisions remain human-controlled.</p>
           </div>
         </div>
       </article>
 
-      <article class="work-card work-card--wide">
+      <article class="work-card work-card--wide decision-loop-card">
         <div class="work-body">
           <p class="case-badge mono">HOW THE TWO META ADS SYSTEMS CONNECT</p>
           <h3>The Decision Loop</h3>
-          <div class="loop-chain mono">
-            <span>Data</span><span class="loop-arrow">→</span>
-            <span>Dashboard</span><span class="loop-arrow">→</span>
-            <span>AI Analysis</span><span class="loop-arrow">→</span>
-            <span>Human Review</span><span class="loop-arrow">→</span>
-            <span>Campaign Action</span><span class="loop-arrow">→</span>
-            <span>New Performance Data</span>
+          <div class="decision-loop mono">
+            <div class="dl-node">
+              <span class="dl-node-title">Data</span>
+              <span class="dl-node-role dl-node-role--neutral">Raw Input</span>
+            </div>
+            <span class="dl-arrow">→</span>
+            <div class="dl-node dl-node--system">
+              <span class="dl-node-title">Dashboard</span>
+              <span class="dl-node-role dl-node-role--blue">Reporting / Monitoring</span>
+            </div>
+            <span class="dl-arrow">→</span>
+            <div class="dl-node dl-node--system">
+              <span class="dl-node-title">AI Analysis</span>
+              <span class="dl-node-role dl-node-role--blue">Decision Support</span>
+            </div>
+            <span class="dl-arrow">→</span>
+            <div class="dl-node dl-node--human">
+              <span class="dl-node-title">Human Review</span>
+              <span class="dl-node-role dl-node-role--amber">Final Decision / Control</span>
+            </div>
+            <span class="dl-arrow">→</span>
+            <div class="dl-node">
+              <span class="dl-node-title">Campaign Action</span>
+              <span class="dl-node-role dl-node-role--neutral">Output</span>
+            </div>
+            <span class="dl-arrow dl-arrow--loop">↺</span>
+            <div class="dl-node dl-node--feedback">
+              <span class="dl-node-title">New Performance Data</span>
+              <span class="dl-node-role dl-node-role--neutral">Feeds Cycle Again</span>
+            </div>
           </div>
           <p class="work-solution">The Meta Ads Dashboard is the reporting layer — it centralizes historical campaign data so it can be reported on and reviewed. The Meta AI Analyst is the decision-support layer — it reads that data and surfaces observations and recommendations. Neither system controls campaigns directly; I review the output of both and decide what action, if any, to take, which produces the next round of performance data.</p>
         </div>
       </article>
 
-      <article class="work-card" data-details="details-social">
+      <article class="work-card work-card--publish" data-details="details-social">
+        <div class="system-header">
+          <span class="system-header-num mono">SYSTEM 05 · CONTENT OPERATIONS</span>
+          <span class="system-header-type system-header-type--publish">Publishing Workflow</span>
+        </div>
         <div class="case-badge-row">
           <p class="case-badge mono">RECURRING CONTENT OPERATIONS AUTOMATION</p>
           <span class="status-badge mono"><span class="dot-live"></span>DEPLOYED</span>
@@ -347,6 +416,18 @@
             <div><span class="system-field-label">PROCESS</span><span class="system-field-value">Source → generate → Telegram approval → post → log</span></div>
             <div><span class="system-field-label">DECISION</span><span class="system-field-value">Whether a post goes live (human approval)</span></div>
           </div>
+          <div class="type-visual">
+            <span class="type-visual-label">POSTING SCHEDULE</span>
+            <div class="schedule-strip mono">
+              <span class="schedule-day schedule-day--active">MON</span>
+              <span class="schedule-day schedule-day--active">TUE</span>
+              <span class="schedule-day schedule-day--active">WED</span>
+              <span class="schedule-day schedule-day--active">THU</span>
+              <span class="schedule-day schedule-day--active">FRI</span>
+              <span class="schedule-day schedule-day--active">SAT</span>
+              <span class="schedule-day schedule-day--active">SUN</span>
+            </div>
+          </div>
           <p class="work-problem"><span class="mono">BUILT BECAUSE</span> Daily posting is expected Monday through Sunday, but I can't guarantee a prepared image will always be ready in the posting folder on any given day.</p>
           <p class="work-solution"><span class="mono">SYSTEM</span> A recurring content workflow: it posts prepared content when available, and falls back to alternate content logic when it isn't — removing the need to manually run the posting process every day.</p>
           <p class="work-tools mono">n8n · Facebook · Telegram · Google Sheets · Gemini AI</p>
@@ -356,7 +437,7 @@
           <div class="work-details" id="details-social" hidden>
             <p><span class="mono detail-label">WHY IT MATTERED</span> Missing even one day's post breaks posting consistency, and manually preparing and posting content daily is a recurring task easy to forget or delay.</p>
             <p><span class="mono detail-label">HOW IT WORKS</span> On a schedule, the workflow sources new vehicle images, generates AI captions and post images, routes them through a Telegram approval step, then posts to Facebook and logs the result. If no ready image is available, fallback content logic takes over instead.</p>
-            <p><span class="mono detail-label">HUMAN ROLE</span> I approve posts through Telegram before anything goes live — the system prepares and schedules; I retain final publishing approval.</p>
+            <p><span class="mono detail-label detail-label--human">HUMAN ROLE</span> I approve posts through Telegram before anything goes live — the system prepares and schedules; I retain final publishing approval.</p>
             <p><span class="mono detail-label">RESULT</span> Deployed and actively used for the daily Facebook content process. The workflow handles scheduled publishing Monday through Sunday, including fallback logic when a prepared image is unavailable. Published content is logged after execution, while final approval remains under human control.</p>
           </div>
         </div>
