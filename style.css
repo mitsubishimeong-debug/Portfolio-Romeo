@@ -340,6 +340,20 @@ main > section{ padding: 96px var(--pad); }
 .reveal{ opacity:0; transform: translateY(16px); transition: opacity .5s ease, transform .5s ease; }
 .reveal.is-visible{ opacity:1; transform: translateY(0); }
 
+/* ================= WHAT I DO / HOW I APPROACH ================= */
+.what-i-do{ padding-bottom: 32px; }
+.approach{ padding-top: 0; }
+.approach-chain{
+  display:flex; flex-wrap: wrap; align-items:center; gap: 10px;
+  font-size: 0.8rem; color: var(--text); margin: 24px 0 16px 0;
+}
+.approach-chain span:not(.loop-arrow){
+  background:#fff; border: 1px solid var(--line); border-radius: 3px;
+  padding: 8px 12px; white-space: nowrap;
+}
+.approach-chain .approach-human{ border-color: var(--amber); color: var(--amber); font-weight:600; }
+.approach-note{ color: var(--text-muted); font-size: 0.9rem; max-width: 640px; }
+
 /* ================= ECOSYSTEM (loop map) ================= */
 .ecosystem{ background: var(--paper-alt); }
 .loop-grid{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
