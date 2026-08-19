@@ -298,6 +298,8 @@ main > section{ padding: 96px var(--pad); }
 
 /* ================= TOOLS ================= */
 .tools-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 920px; }
+.tools-grid--5{ grid-template-columns: repeat(3, 1fr); max-width: none; }
+.tools-note{ font-size: 0.68rem; color: var(--text-muted); margin-top: 10px; line-height:1.5; }
 .tools-col-title{ font-size: 0.75rem; color: var(--blue); margin: 0 0 18px 0; }
 .tools-list li{
   padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 0.95rem;
@@ -337,6 +339,32 @@ main > section{ padding: 96px var(--pad); }
 /* ================= SCROLL REVEAL ================= */
 .reveal{ opacity:0; transform: translateY(16px); transition: opacity .5s ease, transform .5s ease; }
 .reveal.is-visible{ opacity:1; transform: translateY(0); }
+
+/* ================= ECOSYSTEM (loop map) ================= */
+.ecosystem{ background: var(--paper-alt); }
+.loop-grid{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.loop-card{
+  background:#fff; border: 1px solid var(--line); border-radius: 6px; padding: 20px 22px;
+}
+.loop-label{ font-size: 0.7rem; color: var(--blue); margin: 0 0 12px 0; }
+.loop-chain{
+  display:flex; flex-wrap: wrap; align-items:center; gap: 8px;
+  font-size: 0.78rem; color: var(--text);
+}
+.loop-chain span:not(.loop-arrow){
+  background: var(--paper-alt); border: 1px solid var(--line); border-radius: 3px;
+  padding: 6px 10px; white-space: nowrap;
+}
+.loop-arrow{ color: var(--text-muted); font-size: 0.9rem; }
+
+/* ================= CASE STUDY EXTRAS ================= */
+.case-badge{
+  font-size: 0.66rem; color: var(--amber); letter-spacing: 0.08em;
+  padding: 22px 24px 0 24px; margin: 0;
+}
+.detail-label{
+  color: var(--blue); font-size: 0.68rem; display:block; margin-bottom: 3px;
+}
 
 /* ================= FEATURED WORK ================= */
 .featured-work{ background: var(--paper); padding-top: 64px; }
@@ -436,6 +464,8 @@ main > section{ padding: 96px var(--pad); }
   .hero-inner{ grid-template-columns: 1fr; padding: 40px 0; gap: 28px; }
   .crm-grid{ grid-template-columns: repeat(2, 1fr); }
   .tools-grid{ grid-template-columns: 1fr 1fr; }
+  .tools-grid--5{ grid-template-columns: 1fr 1fr; }
+  .loop-grid{ grid-template-columns: 1fr; }
   .education-inner{ grid-template-columns: 1fr; gap: 40px; }
   .work-grid{ grid-template-columns: 1fr; }
   .cert-grid{ grid-template-columns: repeat(2, 1fr); }
