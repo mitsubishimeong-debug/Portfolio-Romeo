@@ -16,7 +16,17 @@
   --text-on-ink-muted: #9AA1AF;
   --blue:       #3D6FE0;
   --blue-dim:   #2C52AE;
+  --blue-bg:    #EAF0FD;
+  --blue-line:  #C4D5F7;
   --amber:      #D98A3D;
+  --amber-dim:  #A6631F;
+  --amber-bg:   #FBF0E3;
+  --amber-line: #EDCDA0;
+  --green:      #4CAF7D;
+  --green-dim:  #2E8A5E;
+  --green-bg:   #E7F5EE;
+  --green-line: #BCE3D0;
+  --red:        #C7462C;
 
   --font-display: 'Space Grotesk', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -256,10 +266,89 @@ main > section{ padding: 96px var(--pad); }
 .case-badge-row .case-badge{ padding:0; flex:1; }
 .status-badge{
   display:inline-flex; align-items:center; gap:6px; flex-shrink:0;
-  font-size: 0.62rem; letter-spacing: 0.06em; color: var(--text-muted);
-  border: 1px solid var(--line); border-radius: 20px; padding: 4px 10px 4px 8px;
+  font-size: 0.62rem; letter-spacing: 0.06em; color: var(--green-dim);
+  border: 1px solid var(--green-line); background: var(--green-bg);
+  border-radius: 20px; padding: 4px 10px 4px 8px;
   white-space: nowrap;
 }
+
+/* ================= SYSTEM HEADER (numbered identity strip) ================= */
+.system-header{
+  display:flex; align-items:center; gap: 10px; flex-wrap: wrap;
+  padding: 18px 24px 0 24px; margin-bottom: -4px;
+}
+.system-header-num{
+  font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-muted);
+  letter-spacing: 0.08em; flex-shrink:0;
+}
+.system-header-type{
+  font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.1em;
+  padding: 3px 9px; border-radius: 3px; flex-shrink:0;
+  text-transform: uppercase;
+}
+.system-header-type--monitor{ color: var(--blue-dim); background: var(--blue-bg); border:1px solid var(--blue-line); }
+.system-header-type--decision{ color: var(--amber-dim); background: var(--amber-bg); border:1px solid var(--amber-line); }
+.system-header-type--comms{ color: var(--blue-dim); background: var(--blue-bg); border:1px solid var(--blue-line); }
+.system-header-type--pipeline{ color: var(--blue-dim); background: var(--blue-bg); border:1px solid var(--blue-line); }
+.system-header-type--publish{ color: var(--amber-dim); background: var(--amber-bg); border:1px solid var(--amber-line); }
+
+/* type accent — left rail communicates system category at a glance */
+.work-card{ border-left: 3px solid var(--line); }
+.work-card--monitor{ border-left-color: var(--blue); }
+.work-card--decision{ border-left-color: var(--amber); }
+.work-card--comms{ border-left-color: var(--blue); }
+.work-card--pipeline{ border-left-color: var(--blue-dim); }
+.work-card--publish{ border-left-color: var(--amber); }
+
+/* DECISION field & HUMAN ROLE detail get the "judgment" color (amber) —
+   everything else stays on the neutral/blue reporting language */
+.system-fields > div:nth-child(3) .system-field-label{ color: var(--amber-dim); }
+.detail-label--human{ color: var(--amber-dim) !important; }
+
+/* ---- compositional variation blocks (differ by system type) ---- */
+.type-visual{
+  margin: 4px 0 2px; padding: 12px 14px; border: 1px solid var(--line);
+  border-radius: 3px; background: var(--paper-alt);
+}
+.type-visual-label{
+  display:block; font-family: var(--font-mono); font-size: 0.6rem; color: var(--text-muted);
+  letter-spacing: 0.08em; margin-bottom: 9px;
+}
+
+/* pipeline strip — CRM */
+.pipeline-strip{ display:flex; flex-wrap: wrap; align-items:center; gap: 0; }
+.pipeline-stage{
+  font-family: var(--font-mono); font-size: 0.66rem; color: var(--text-muted);
+  padding: 5px 8px; white-space: nowrap;
+}
+.pipeline-stage--end{ color: var(--blue-dim); font-weight:600; }
+.pipeline-sep{ color: var(--line-dark); font-size: 0.7rem; }
+
+/* comms flow toggle — Messenger */
+.comms-toggle{ display:flex; align-items:center; gap: 10px; flex-wrap: wrap; }
+.comms-node{
+  font-family: var(--font-mono); font-size: 0.66rem; padding: 6px 10px;
+  border-radius: 20px; border: 1px solid var(--blue-line); color: var(--blue-dim); background: var(--blue-bg);
+}
+.comms-node--human{ border-color: var(--amber-line); color: var(--amber-dim); background: var(--amber-bg); }
+.comms-swap{ color: var(--text-muted); font-size: 0.8rem; }
+
+/* decision-support mini flow — Meta AI Analyst */
+.decision-flow{ display:flex; align-items:center; gap: 8px; flex-wrap: wrap; }
+.decision-flow-node{
+  font-family: var(--font-mono); font-size: 0.66rem; color: var(--text);
+  background:#fff; border: 1px solid var(--line); padding: 6px 10px; border-radius: 3px;
+}
+.decision-flow-node--out{ border-color: var(--amber-line); color: var(--amber-dim); background: var(--amber-bg); }
+.decision-flow-arrow{ color: var(--text-muted); font-size: 0.8rem; }
+
+/* weekly schedule strip — Facebook automation */
+.schedule-strip{ display:flex; gap: 6px; }
+.schedule-day{
+  flex:1; text-align:center; font-family: var(--font-mono); font-size: 0.6rem;
+  color: var(--text-muted); padding: 6px 0; border: 1px solid var(--line); border-radius: 3px; background:#fff;
+}
+.schedule-day--active{ border-color: var(--blue-line); color: var(--blue-dim); background: var(--blue-bg); }
 
 /* ================= PROCESS LINE (signature element) ================= */
 .process{ background: var(--paper); text-align:left; }
@@ -444,6 +533,33 @@ main > section{ padding: 96px var(--pad); }
   padding: 6px 10px; white-space: nowrap;
 }
 .loop-arrow{ color: var(--text-muted); font-size: 0.9rem; }
+
+/* ================= DECISION LOOP (signature diagram) ================= */
+.decision-loop-card{ border-left-color: var(--amber); background: var(--paper-alt); }
+.decision-loop{
+  display:flex; align-items:stretch; flex-wrap: wrap; gap: 4px 10px;
+  margin: 8px 0 22px 0;
+}
+.dl-node{
+  display:flex; flex-direction:column; gap:5px; justify-content:center;
+  background:#fff; border: 1px solid var(--line); border-radius: 4px;
+  padding: 10px 14px; min-width: 128px;
+}
+.dl-node-title{ font-size: 0.8rem; color: var(--text); font-weight:600; letter-spacing:0; }
+.dl-node-role{ font-size: 0.6rem; letter-spacing: 0.06em; }
+.dl-node-role--neutral{ color: var(--text-muted); }
+.dl-node-role--blue{ color: var(--blue-dim); }
+.dl-node-role--amber{ color: var(--amber-dim); }
+.dl-node--system{ border-top: 3px solid var(--blue); }
+.dl-node--human{ border-top: 3px solid var(--amber); background: var(--amber-bg); }
+.dl-node--feedback{ border-style: dashed; }
+.dl-arrow{ align-self:center; color: var(--text-muted); font-size: 1rem; flex-shrink:0; }
+.dl-arrow--loop{ color: var(--amber-dim); font-size: 1.05rem; }
+@media (max-width: 720px){
+  .decision-loop{ flex-direction: column; align-items: stretch; }
+  .dl-arrow{ align-self:flex-start; padding-left: 6px; transform: rotate(90deg); }
+  .dl-arrow--loop{ transform:none; }
+}
 
 /* ================= CASE STUDY EXTRAS ================= */
 .case-badge{
